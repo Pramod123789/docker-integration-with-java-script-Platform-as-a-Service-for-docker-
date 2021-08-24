@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>docker terminal</title>
+<script>
+function lw()
+{
+var i = document.getElementById("in1").value
+
+var xhr = new XMLHttpRequest();
+
+xhr.open("GET", "http://192.168.0.141/cgi-bin/pramod.py?x=" + i, true);
+
+xhr.send();
+
+xhr.onload = function() {
+      var output = xhr.responseText;
+      document.getElementById("d1").innerHTML = output;
+}
+
+}
+
+</script>
+<style>
+body
+{
+background-image: url('https://i.pinimg.com/originals/c6/ad/2e/c6ad2ec1fbc13a378d668b5c58a427ed.gif');
+background-repeat:no-repeat;
+background-attachment: fixed;
+  background-size: cover;
+color: white;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  width:25%;
+}
+
+.button
+{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+          position:absolute;
+top:80%;
+        left: 50%
+}
+
+.button1:hover {
+  background-color: black;
+  color: white;
+}
+#in1 {
+height:44px;
+width:400px;
+font-weight:bold;
+font-size:large;
+}
+
+</style>
+</head>
+<body>
+<h1 align="center">Docker</h1>
+<h1 style="color:green;">
+<marquee>Welcome to Docker Online Portal</marquee>
+<img src="https://www.docker.com/sites/default/files/social/docker_facebook_share.png" class="center"  />
+<h2 align ="center">root@localhost~]<input id="in1" />
+<br /></h2>
+<h2 align="center">
+<pre>
+<div id="d1">Output </div>
+</pre>
+</h2>
+<button onclick="lw()" class="button button1">RUN </button>
+
+</body>
+</html>
